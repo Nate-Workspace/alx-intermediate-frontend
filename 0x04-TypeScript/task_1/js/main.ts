@@ -15,6 +15,16 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+// Task 1
 const teacher3: Teacher = {
   firstName: 'John',
   fullTimeEmployee: false,
@@ -23,7 +33,9 @@ const teacher3: Teacher = {
   contract: false,
 };
 
+console.log(teacher3);
 
+// Task 2
 const director1: Directors = {
   firstName: 'Johnathan',
   lastName: 'Dobric',
@@ -31,14 +43,31 @@ const director1: Directors = {
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
+console.log(director1);
 
-
-
+// Task 3
 const printTeacher: printTeacherFunction = (firstName, lastName) => {
   return `${firstName.charAt(0)}. ${lastName}`;
 };
 
+console.log(printTeacher("John", "Doe")); 
 
-console.log(printTeacher("John", "Doe")); // J. Doe
-console.log(director1);
-console.log(teacher3);
+// Task 4
+class StudentClass implements StudentClassInterface {
+  constructor(private firstName: string, private lastName: string) {}
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+const student1 = new StudentClass("Alice", "Smith");
+console.log(student1.displayName()); 
+console.log(student1.workOnHomework()); 
+
+
+
