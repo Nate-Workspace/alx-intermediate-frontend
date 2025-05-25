@@ -1,0 +1,12 @@
+# Steps I used to install SASS
+
+# 1. Went to that specific directory
+cd 0x03-sass-scss
+
+# 2. Changed the node version using nvm
+nvm use 22.16.0
+
+# 3. Installed SASS
+npm install sass
+
+# 4. Created this file and documented the process
